@@ -1,0 +1,39 @@
+<app-page-container>
+  <section class="compare-info">
+    <p>Selected for compare: {{ selectedKeyboardIds.length }}</p>
+  </section>
+  <section class="search-section">
+    <app-search-bar
+      placeholder="Search keyboards..."
+      [(searchText)]="searchText"
+      (searchTextChange)="onSearchChange($event)"
+    ></app-search-bar>
+  </section>
+  <section class="keyboard-list">
+    @if (isLoading()) {
+      <p class="loading-text">Loading keyboards...</p>
+    } @else if (errorMessage()) {
+      <p class="error-text">Error loading keyboards. Please try again later.</p>
+    } @else if (getFilteredKeyboards().length > 0) {
+      @for (keyboard of getFilteredKeyboards(); track keyboard.id) {
+        <app-keyboard-card
+          [brand]="keyboard.brand"
+          [model]="keyboard.model"
+          [layout]="keyboard.specs.layout"
+          [switchType]="keyboard.specs.switchType"
+          [price]="keyboard.price"
+          [id]="keyboard.id"
+          [selected]="selectedKeyboardIds.includes(keyboard.id)"
+          [imageUrl]="keyboard.imageUrl"
+          (compare)="onKeyboardCompare($event)"
+        ></app-keyboard-card>
+      }
+    } @else {
+      <p class="empty-state">No keyboards found matching "{{ searchText }}"</p>
+    }
+  </section>
+  <section class="compare-section">
+    <app-compare-table [headers]="getCompareTableHeaders()" [rows]="getCompareTableRows()">
+    </app-compare-table>
+  </section>
+</app-page-container>

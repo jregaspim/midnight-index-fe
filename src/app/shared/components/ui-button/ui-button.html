@@ -1,0 +1,7 @@
+<button
+  [class.primary]="buttonType() === 'primary'"
+  [class.secondary]="buttonType() === 'secondary'"
+  (click)="onClick()"
+>
+  {{ label() }}
+</button>

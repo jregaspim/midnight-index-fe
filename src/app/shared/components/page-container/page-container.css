@@ -1,0 +1,19 @@
+.page-container {
+  width: 100%;
+
+  max-width: 1400px;
+
+  margin: 0 auto;
+
+  padding: 20px 24px;
+}
+
+h1 {
+  font-size: 40px;
+  margin-bottom: 12px;
+}
+
+p {
+  font-size: 18px;
+  color: #cbd5e1;
+}

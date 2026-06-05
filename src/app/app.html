@@ -1,12 +1,4 @@
 <app-header></app-header>
 <main>
-  @for (keyboard of keyboards; track keyboard.model) {
-    <app-keyboard-card
-      [brand]="keyboard.brand"
-      [model]="keyboard.model"
-      [layout]="keyboard.layout"
-      [switchType]="keyboard.switchType"
-      [price]="keyboard.price"
-    ></app-keyboard-card>
-  }
+  <router-outlet></router-outlet>
 </main>

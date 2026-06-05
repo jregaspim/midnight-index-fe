@@ -1,0 +1,21 @@
+<app-ui-card [selected]="selected">
+  <div class="card">
+    <a class="card-link" [routerLink]="['/keyboards', id]">
+      <img [src]="imageUrl" [alt]="brand + ' ' + model" />
+
+      <h2>{{ brand }} {{ model }}</h2>
+
+      <p class="brand">{{ brand }}</p>
+
+      <div class="specs">
+        <p>Layout: {{ layout }}</p>
+        <p>Switch: {{ switchType }}</p>
+      </div>
+
+      <p class="price">${{ price }}</p>
+    </a>
+
+    <app-ui-button label="Compare" buttonType="primary" (clicked)="onCompareClick()">
+    </app-ui-button>
+  </div>
+</app-ui-card>

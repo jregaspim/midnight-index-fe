@@ -1,0 +1,33 @@
+<app-page-container>
+  <section class="keyboard-detail">
+    @if (isLoading()) {
+      <p class="loading-text">Loading keyboard...</p>
+    } @else if (errorMessage()) {
+      <p class="error-text">{{ errorMessage() }}</p>
+    } @else if (keyboard(); as keyboard) {
+      <div class="detail-card">
+        <img [src]="keyboard.imageUrl" [alt]="keyboard.brand + ' ' + keyboard.model" />
+
+        <div class="detail-content">
+          <p class="brand">{{ keyboard.brand }}</p>
+
+          <h1>{{ keyboard.brand }} {{ keyboard.model }}</h1>
+
+          <p class="price">${{ keyboard.price }}</p>
+
+          <div class="spec-grid">
+            <div>
+              <span>Layout</span>
+              <strong>{{ keyboard.specs.layout }}</strong>
+            </div>
+
+            <div>
+              <span>Switch Type</span>
+              <strong>{{ keyboard.specs.switchType }}</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    }
+  </section>
+</app-page-container>

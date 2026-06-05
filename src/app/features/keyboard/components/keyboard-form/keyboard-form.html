@@ -1,0 +1,57 @@
+<form (ngSubmit)="onSubmit()" class="keyboard-form">
+  <app-ui-input
+    label="Brand"
+    placeholder="Brand"
+    [value]="formData.brand"
+    (valueChange)="formData.brand = $event"
+  >
+  </app-ui-input>
+
+  <app-ui-input
+    label="Model"
+    placeholder="Model"
+    [value]="formData.model"
+    (valueChange)="formData.model = $event"
+  >
+  </app-ui-input>
+
+  <app-ui-input
+    label="Price"
+    type="number"
+    placeholder="Price"
+    [value]="formData.price.toString()"
+    (valueChange)="formData.price = +$event"
+  >
+  </app-ui-input>
+
+  <label>
+    <input type="checkbox" name="wireless" [(ngModel)]="formData.features.wireless" />
+    Wireless
+  </label>
+
+  <app-ui-input
+    label="Image URL"
+    placeholder="Image URL"
+    [value]="formData.imageUrl"
+    (valueChange)="formData.imageUrl = $event"
+  >
+  </app-ui-input>
+
+  <app-ui-input
+    label="Layout"
+    placeholder="Layout"
+    [value]="formData.specs.layout"
+    (valueChange)="formData.specs.layout = $event"
+  >
+  </app-ui-input>
+
+  <app-ui-input
+    label="Switch Type"
+    placeholder="Switch Type"
+    [value]="formData.specs.switchType"
+    (valueChange)="formData.specs.switchType = $event"
+  >
+  </app-ui-input>
+
+  <app-ui-button label="Add Keyboard" buttonType="primary"> </app-ui-button>
+</form>

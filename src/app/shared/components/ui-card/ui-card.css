@@ -1,0 +1,22 @@
+.ui-card {
+  width: 320px;
+  background-color: #111827;
+
+  border: 1px solid #1e293b;
+
+  border-radius: 16px;
+
+  padding: 24px;
+
+  transition: 0.2s ease;
+}
+
+.ui-card:hover {
+  border: 2px solid #3b82f6;
+
+  transform: translateY(-2px);
+}
+
+.selected {
+  border: 2px solid #3b82f6;
+}
